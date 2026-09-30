@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Gray background matching phone theme icons -->
+  <rect width="512" height="512" rx="115" fill="#CECFD2" />
+  
+  <!-- Apple Silhouette in deep rich black -->
+  <g fill="#000000">
+    <!-- Stem -->
+    <path d="M 250 162 C 246 122, 266 90, 292 72 C 294 74, 296 78, 294 81 C 273 102, 262 128, 258 162 Z" />
+    <!-- Leaf -->
+    <path d="M 270 148 C 282 102, 338 82, 378 95 C 374 138, 328 168, 270 148 Z" />
+    <!-- Apple Body -->
+    <path d="M 256 174
+             C 222 136, 130 140, 114 228
+             C 98 304, 136 394, 214 422
+             C 239 430, 248 422, 256 422
+             C 264 422, 273 430, 298 422
+             C 376 394, 414 304, 398 228
+             C 382 140, 290 136, 256 174 Z" />
+  </g>
+</svg>

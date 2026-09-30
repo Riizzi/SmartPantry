@@ -1,0 +1,6 @@
+{
+  "name": "SmartPantry",
+  "description": "Despensa inteligente que lê QR Code de nota fiscal (NFC-e), rastreia validades e sugere receitas com o que você já tem.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
