@@ -63,6 +63,18 @@ function extractChaveAcesso(input: string): string | null {
   return match ? match[0] : null;
 }
 
+// Helper: accept only http(s) URLs on official SEFAZ portals (*.gov.br)
+function isSefazPortalUrl(input: unknown): boolean {
+  if (typeof input !== 'string') return false;
+  try {
+    const url = new URL(input);
+    const host = url.hostname.toLowerCase();
+    return (url.protocol === 'https:' || url.protocol === 'http:') && host.endsWith('.gov.br');
+  } catch {
+    return false;
+  }
+}
+
 // Helper: Timeout wrapper for AI calls
 function withTimeout<T>(promise: Promise<T>, timeoutMs = 8000): Promise<T> {
   return Promise.race([
@@ -88,8 +100,10 @@ app.post('/api/nfce/parse', async (req, res) => {
 
     let htmlContent = rawHtml || '';
 
-    // If a QR Code URL was provided and no rawHtml, attempt fetching the SEFAZ portal
-    if (qrUrl && !htmlContent) {
+    // If a QR Code URL was provided and no rawHtml, attempt fetching the SEFAZ portal.
+    // Only official SEFAZ portals (*.gov.br) are fetched, so the server can't be used
+    // to reach arbitrary or internal addresses (SSRF).
+    if (qrUrl && !htmlContent && isSefazPortalUrl(qrUrl)) {
       try {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 6000);
