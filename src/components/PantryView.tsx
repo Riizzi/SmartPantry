@@ -176,7 +176,7 @@ export const PantryView: React.FC<PantryViewProps> = ({
         {/* Cooked Recipes Card (Receitas) */}
         <button
           onClick={() => onNavigateTab && onNavigateTab('receitas')}
-          className="p-4 rounded-2xl bg-[#FFFDF9] border border-[#E8DFD1] shadow-[2px_2px_0px_#E5DCD0] hover:border-[#D6C8B6] transition flex items-center justify-between cursor-pointer col-span-2 sm:col-span-1 min-h-[44px] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none"
+          className="p-4 rounded-2xl bg-[#FFFDF9] border border-[#E8DFD1] shadow-[2px_2px_0px_#E5DCD0] hover:border-[#D6C8B6] transition flex items-center justify-between cursor-pointer min-h-[44px] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none"
           title="Ver aba de Receitas"
         >
           <div>
