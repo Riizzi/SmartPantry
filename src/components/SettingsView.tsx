@@ -7,6 +7,7 @@ import {
   RotateCcw,
 } from 'lucide-react';
 import { PantryStore } from '../services/storage';
+import Cl4pLinkCard from './Cl4pLinkCard';
 import { ConfigDespensa } from '../types/pantry';
 
 interface SettingsViewProps {
@@ -76,6 +77,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({ onNotify }) => {
 
   return (
     <div className="space-y-6 max-w-2xl mx-auto">
+      <Cl4pLinkCard />
       {/* Basics Management */}
       <div className="p-6 bg-[#FFFDF9] rounded-2xl border border-[#E8DFD1] shadow-[2px_2px_0px_#E5DCD0] space-y-4">
         <div>
